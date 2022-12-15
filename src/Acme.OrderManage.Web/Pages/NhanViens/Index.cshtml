@@ -1,0 +1,31 @@
+﻿
+@page
+@using Acme.OrderManage.Localization
+@using Acme.OrderManage.Web.Pages.NhanViens
+@using Microsoft.Extensions.Localization
+@model IndexModel
+@inject IStringLocalizer<OrderManageResource> L
+@section scripts
+{
+    <abp-script src="/Pages/NhanViens/Index.js" />
+}
+<abp-card>
+<abp-card-header>
+    <abp-row>
+        <abp-column size-md="_6">
+            <abp-card-title>@L["NhanVien"]</abp-card-title>
+        </abp-column>
+        <abp-column size-md="_6" class="text-end">
+            <abp-button id="NewNhanVienButton"
+                        text="@L["NhanVienMoi"].Value"
+                        icon="plus"
+                        button-type="Primary"/>
+        </abp-column>
+    </abp-row>
+</abp-card-header>
+
+    <abp-card-body>
+        <abp-table striped-rows="true" id="NhanVienTable"></abp-table>
+    </abp-card-body>
+</abp-card>
+
